@@ -1,0 +1,33 @@
+{
+  "_note": "null = unfilled cell. Every null must be resolved against the real game files before building.",
+  "characters": [
+    {"id": "steve_like", "displayName": "Builder", "model": "original blocky humanoid", "skinSource": null, "replacesPlayerMesh": true, "hitbox": null, "animSet": null, "unrealClass": null}
+  ],
+  "blocks": [
+    {"id": "dirt",  "displayName": "Dirt Block",  "size_cm": 100, "meshAsset": null, "material": null, "hp": null, "dropsItem": "dirt",  "maxStack": 64},
+    {"id": "stone", "displayName": "Stone Block", "size_cm": 100, "meshAsset": null, "material": null, "hp": null, "dropsItem": "stone", "maxStack": 64},
+    {"id": "wood",  "displayName": "Wood Block",  "size_cm": 100, "meshAsset": null, "material": null, "hp": null, "dropsItem": "wood",  "maxStack": 64}
+  ],
+  "build_actions": [
+    {"id": "place", "input": "RightMouse", "snapGrid_cm": 100, "maxReach_cm": 600, "consumesItem": true,  "soundAsset": null, "blockedBy": ["player_capsule", "other_structures"]},
+    {"id": "break", "input": "LeftMouse",  "maxReach_cm": 600, "consumesItem": false, "givesItem": true, "soundAsset": null},
+    {"id": "cycle_block", "input": "MouseWheel", "list": ["dirt", "stone", "wood"]}
+  ],
+  "systems": [
+    {"id": "build_mode", "toggleKey": null, "startsEnabled": true, "worksAnywhere": true, "saveWithWorld": null},
+    {"id": "starter_inventory", "items": [{"block": "dirt", "count": 64}, {"block": "stone", "count": 64}, {"block": "wood", "count": 64}]}
+  ],
+  "hooks_into_game": [
+    {"id": "swap_player_mesh", "target": null, "method": null, "verified": false},
+    {"id": "read_input", "target": null, "method": null, "verified": false},
+    {"id": "spawn_block_actor", "target": null, "method": null, "verified": false},
+    {"id": "save_load_blocks", "target": null, "method": null, "verified": false}
+  ],
+  "release": [
+    {"id": "mod_route", "route": "ARK: Survival Ascended official mod route (Unreal dev kit)", "bundledWithRelease": true, "meltyLoader": "none", "oneClickVerified": false},
+    {"id": "scope", "singlePlayerOnly": true, "officialServersSupported": false, "requiredGames": ["ark-survival-ascended"], "minecraftRequired": null}
+  ],
+  "open_questions": [
+    "Original blocky Steve-style character (safe) or read the skin from the player's own Minecraft install?"
+  ]
+}
